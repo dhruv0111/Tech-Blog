@@ -1,3 +1,10 @@
+@import 'flowbite/dist/flowbite.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    height: 100vh;
+}
