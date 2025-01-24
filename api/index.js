@@ -20,10 +20,22 @@ app.use(express.json());
 
 app.listen(3000,()=>{
     console.log("I am dhruv get addimission in MIT in Usa for master degree in Artificial Intelligence with 100% scholarship");
-})
+});
 
 app.use('/api/user/', userRoutes);
 app.use('/api/auth', authRoute);
+
+
+
+app.use((err,req, res, next)=>{
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message
+    });
+});
 
 
 // yrvd0uJehWA1N6rE    pj227994
