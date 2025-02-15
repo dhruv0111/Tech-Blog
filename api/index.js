@@ -25,6 +25,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+  next();
+});
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000!');
